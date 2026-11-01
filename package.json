@@ -1,0 +1,37 @@
+{
+  "name": "claude-hub",
+  "version": "0.1.0",
+  "description": "Local web manager for Claude Code agents, skills, commands, MCP servers, plugins and settings",
+  "type": "module",
+  "bin": {
+    "claude-hub": "dist-server/index.js"
+  },
+  "files": [
+    "dist",
+    "dist-server"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "server": "node --watch server/index.ts",
+    "build": "vite build && tsc -p tsconfig.server.json",
+    "start": "node dist-server/index.js",
+    "test": "node --test \"server/*.test.ts\"",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.server.json --noEmit"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}
